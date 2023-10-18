@@ -23,7 +23,6 @@ Route::post('users/login', [UserController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
     Route::post('posts', [PostController::class, 'store']);
-    Route::get('posts', [PostController::class, 'index']);
     Route::get('posts/following', [PostController::class, 'following']);
 
     Route::get('friends/posts', [FriendController::class, 'posts']);

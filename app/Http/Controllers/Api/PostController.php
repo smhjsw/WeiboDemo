@@ -25,13 +25,6 @@ class PostController extends Controller
         ], 200);
     }
 
-    public function index(Request $request)
-    {
-        $posts = Post::whereIn('user_id', [auth()->user()->id])->orderBy('created_at', 'desc')->get();
-
-        return response()->json($posts, 200);
-    }
-
     public function following(Request $request)
     {
         $followingIds = Friend::where('user_id', auth()->user()->id)->pluck('friend_id');
