@@ -17,8 +17,6 @@ use App\Http\Controllers\Api\FriendController;
 |
 */
 
-Route::resource('users', UserController::class, ['show']);
-
 Route::post('users/register', [UserController::class, 'register']);
 
 Route::post('users/login', [UserController::class, 'login']);
@@ -30,8 +28,8 @@ Route::middleware('auth:api')->group(function () {
 
     Route::get('friends/posts', [FriendController::class, 'posts']);
 
-    Route::get('friends/{friend_id}/follow', [FriendController::class, 'follow']);
-    Route::get('friends/{friend_id}/unfollow', [FriendController::class, 'unfollow']);
+    Route::post('friends/{friend_id}/follow', [FriendController::class, 'follow']);
+    Route::post('friends/{friend_id}/unfollow', [FriendController::class, 'unfollow']);
     Route::get('friends/{friend_id}/posts', [FriendController::class, 'posts']);
 });
 

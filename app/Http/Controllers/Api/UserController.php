@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
-    {
-        $users = User::all();
-        return response()->json($users, 201);
-    }
-
     public function register(Request $request)
     {
         // 验证请求数据

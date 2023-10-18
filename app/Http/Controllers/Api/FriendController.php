@@ -14,7 +14,7 @@ class FriendController extends Controller
         $friend = new Friend();
         $friend->user_id = auth()->user()->id;
         $friend->friend_id = $friend_id;
-
+        $friend->save();
         return response()->json(['message' => '关注成功']);
     }
 
