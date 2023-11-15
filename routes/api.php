@@ -17,6 +17,8 @@ use App\Http\Controllers\Api\FriendController;
 |
 */
 
+Route::post('chat/prompt', [\App\Http\Controllers\Api\ChatController::class, 'prompt']);
+
 Route::post('users/register', [UserController::class, 'register']);
 
 Route::post('users/login', [UserController::class, 'login']);
